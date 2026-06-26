@@ -6,7 +6,7 @@ This bridge lets Hermes submit SPIS work to the orchestrator without changing He
 
 ```bash
 cd /opt/spis/spis-agent-platform
-python scripts/hermes_spis.py submit "开发供应商价格管理模块，支持当前价格和历史价格"
+.venv/bin/python scripts/hermes_spis.py submit "开发供应商价格管理模块，支持当前价格和历史价格"
 ```
 
 The command returns immediately with a task ID.
@@ -14,7 +14,7 @@ The command returns immediately with a task ID.
 ## Check Status
 
 ```bash
-python scripts/hermes_spis.py status spis-xxxxxxxxxxxx
+.venv/bin/python scripts/hermes_spis.py status spis-xxxxxxxxxxxx
 ```
 
 ## Hermes Quick Commands
@@ -31,7 +31,7 @@ quick_commands:
     command: curl -s http://127.0.0.1:18080/health
   spis-latest:
     type: exec
-    command: cd /opt/spis/spis-agent-platform && python -c "from app.config import get_settings; print(get_settings().app_name)"
+    command: cd /opt/spis/spis-agent-platform && .venv/bin/python -c "from app.config import get_settings; print(get_settings().app_name)"
 ```
 
 For parameterized SPIS work, use the skill route below.
@@ -49,7 +49,7 @@ Then in Feishu:
 The skill instructs Hermes to run:
 
 ```text
-python /opt/spis/spis-agent-platform/scripts/hermes_spis.py submit "<user request>"
+cd /opt/spis/spis-agent-platform && .venv/bin/python scripts/hermes_spis.py submit "<user request>"
 ```
 
 For local Windows testing, the path is:

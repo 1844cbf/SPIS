@@ -24,7 +24,7 @@ python C:/CC/spis-agent-platform/scripts/hermes_spis.py submit "<USER_REQUEST>"
 ## Tencent CVM Command
 
 ```bash
-cd /opt/spis/spis-agent-platform && python scripts/hermes_spis.py submit "<USER_REQUEST>"
+cd /opt/spis/spis-agent-platform && .venv/bin/python scripts/hermes_spis.py submit "<USER_REQUEST>"
 ```
 
 ## Status Command
@@ -36,7 +36,7 @@ python C:/CC/spis-agent-platform/scripts/hermes_spis.py status <TASK_ID>
 On Tencent CVM:
 
 ```bash
-cd /opt/spis/spis-agent-platform && python scripts/hermes_spis.py status <TASK_ID>
+cd /opt/spis/spis-agent-platform && .venv/bin/python scripts/hermes_spis.py status <TASK_ID>
 ```
 
 ## Response Shape

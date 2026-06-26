@@ -66,7 +66,7 @@ def submit(args: argparse.Namespace, env: dict[str, str]) -> None:
     task = request("POST", f"{base_url}/webhooks/hermes/tasks/async", payload, secret)
     print(f"SPIS task submitted: {task['task_id']}")
     print(f"Status: {task['status']}")
-    print(f"Check later: python scripts/hermes_spis.py status {task['task_id']}")
+    print(f"Check later: {sys.executable} scripts/hermes_spis.py status {task['task_id']}")
 
 
 def status(args: argparse.Namespace, env: dict[str, str]) -> None:
