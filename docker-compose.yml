@@ -1,0 +1,20 @@
+services:
+  orchestrator:
+    build: .
+    container_name: spis-orchestrator
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "18080:8080"
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+    mem_limit: 768m
+    cpus: "1.0"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
